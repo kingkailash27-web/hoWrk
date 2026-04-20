@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-obsidian: #FFFFFF;
+  --color-slate-dark: #F8F9FA;
+  --color-cyan-safety: #000000;
+  --color-accent: #000000;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-black font-sans antialiased selection:bg-black/5 selection:text-black;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-glow-white {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-radar-gradient {
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+  }
+}
+
+.mask-up {
+  clip-path: inset(100% 0 0 0);
+}
+
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
